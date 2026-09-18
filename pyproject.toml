@@ -1,0 +1,40 @@
+[project]
+name = "forge"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Abhijeet Kumar", email = "154332764+Abhijeet3125@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "chromadb>=1.5.9",
+    "click>=8.1.0",
+    "fastapi>=0.141.1",
+    "httpx>=0.28.0",
+    "ipykernel>=7.3.0",
+    "langchain>=1.4.0",
+    "langgraph>=1.2.11",
+    "python-dotenv>=1.2.3",
+    "sentence-transformers>=6.0.1",
+    "tree-sitter>=0.26.0",
+    "tree-sitter-language-pack>=1.20.0",
+    "uvicorn[standard]>=0.53.0",
+]
+
+[project.scripts]
+forge = "cli.main:cli"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["api*", "cli*", "config*", "core*", "evals*", "scripts*"]
+
+[tool.pyrefly]
+search-path = ["."]
+
+[tool.pyright]
+extraPaths = ["."]
